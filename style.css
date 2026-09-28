@@ -4,10 +4,36 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 40px;
+
+}
+.fixed-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fixed-layer h1 {
+    position: absolute;
+    top: 55px;
+    left: 40px;
+    z-index: 1;
+}
+
+.fixed-layer .intro {
+    position: absolute;
+    top: 55px;
+    right: 160px;
+    z-index: 1;
+}
+
+.fixed-layer img {
+    position: absolute;
+    z-index: 0;
 }
 
 h1 {
-    position: absolute;
+    position: fixed;
     top: 55px;
     left: 40px;
     z-index: 1;
@@ -48,7 +74,15 @@ h1 {
     box-sizing: border-box;
     border: 10px solid #202020;
     background-color: #eeeeee;
+    filter: grayscale(15%) saturate(25%);
+    transition: filter 0.4s ease, transform 0.4s ease;
 }
+.post img:hover {
+    filter: grayscale(0%) saturate(100%);
+    transform: scale(1.02);
+}
+
+
 
 .post p {
     font-family: 'Courier New', Courier, monospace;
@@ -60,6 +94,10 @@ h1 {
     margin: 16px 0 0;
     text-align: left;
     color: #202020;
+    transition: letter-spacing 0.3s ease;
+}
+.post:hover p {
+    letter-spacing: 1.5px;
 }
 
 @media (max-width: 700px) {
@@ -103,7 +141,7 @@ h1 {
     }
 }
 .intro {
-    position: absolute;
+    position: fixed;
     top: 55px;
     right: 160px;
     width: 260px;
@@ -111,8 +149,42 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
     line-height: 1.5;
-    font-weight: normal;
+    font-weight: bold;
 
     color: #202020;
     margin: 0;
+}
+.background-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.background-elements img {
+    position: absolute;
+}
+
+.bg-flower {
+    width: 180px;
+    top: 180px;
+    left: 40px;
+    opacity: 0.7;
+}
+
+.bg-horse {
+    width: 250px;
+    top: 500px;
+    right: 30px;
+    opacity: 0.5;
+}
+
+.bg-camera {
+    width: 160px;
+    bottom: 100px;
+    left: 100px;
+    opacity: 0.6;
 }
